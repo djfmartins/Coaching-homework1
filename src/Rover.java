@@ -1,11 +1,11 @@
 public class Rover {
 
-    private String direction;
+    private Direction direction;
     private int y;
     private int x;
 
     public Rover(int x, int y, String direction) {
-        this.direction = direction;
+        this.direction = new Direction(direction);
         this.y = y;
         this.x = x;
     }
@@ -28,11 +28,11 @@ public class Rover {
                 }
                 int displacement = displacement1;
 
-                if (direction.equals("N")) {
+                if (direction.getDirection().equals("N")) {
                     y += displacement;
-                } else if (direction.equals("S")) {
+                } else if (direction.getDirection().equals("S")) {
                     y -= displacement;
-                } else if (direction.equals("W")) {
+                } else if (direction.getDirection().equals("W")) {
                     x -= displacement;
                 } else {
                     x += displacement;
@@ -42,27 +42,11 @@ public class Rover {
     }
 
     private void rotateLeft() {
-        if (direction.equals("N")) {
-            direction = "W";
-        } else if (direction.equals("S")) {
-            direction = "E";
-        } else if (direction.equals("W")) {
-            direction = "S";
-        } else {
-            direction = "N";
-        }
+        this.direction = this.direction.rotateLeft();
     }
 
     private void rotateRight() {
-        if (direction.equals("N")) {
-            direction = "E";
-        } else if (direction.equals("S")) {
-            direction = "W";
-        } else if (direction.equals("W")) {
-            direction = "N";
-        } else {
-            direction = "S";
-        }
+        this.direction = this.direction.rotateRight();
     }
 
 
