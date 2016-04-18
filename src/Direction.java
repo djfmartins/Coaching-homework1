@@ -1,5 +1,10 @@
 abstract class Direction {
 
+    public static final String NORTH = "N";
+    public static final String SOUTH = "S";
+    public static final String EAST  = "E";
+    public static final String WEST  = "W";
+
     private String direction;
 
     public Direction(String direction) {
@@ -11,11 +16,11 @@ abstract class Direction {
     }
 
     static Direction create(String newDirection) {
-        if (newDirection.equals("N")) {
+        if (newDirection.equals(NORTH)) {
             return new North();
-        } else if (newDirection.equals("S")) {
+        } else if (newDirection.equals(SOUTH)) {
             return new South();
-        } else if (newDirection.equals("W")) {
+        } else if (newDirection.equals(WEST)) {
             return new West();
         } else {
             return new East();

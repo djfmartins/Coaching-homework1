@@ -2,14 +2,14 @@ public class East extends Direction {
 
     public East()
     {
-        super("E");
+        super(EAST);
     }
 
     public Direction rotateLeft() {
-        return Direction.create("N");
+        return Direction.create(NORTH);
     }
 
     public Direction rotateRight() {
-        return Direction.create("S");
+        return Direction.create(SOUTH);
     }
 }
