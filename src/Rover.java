@@ -28,11 +28,11 @@ public class Rover {
                 }
                 int displacement = displacement1;
 
-                if (direction.getDirection().equals("N")) {
+                if (direction.getDirection().equals(Direction.NORTH)) {
                     y += displacement;
-                } else if (direction.getDirection().equals("S")) {
+                } else if (direction.getDirection().equals(Direction.SOUTH)) {
                     y -= displacement;
-                } else if (direction.getDirection().equals("W")) {
+                } else if (direction.getDirection().equals(Direction.WEST)) {
                     x -= displacement;
                 } else {
                     x += displacement;
