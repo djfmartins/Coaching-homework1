@@ -19,23 +19,26 @@ public class Rover {
             } else if (command.isRight()) {
                 rotateRight();
             } else {
-
-                int displacement = -1;
-
-                if (command.isForward()) {
-                    displacement = 1;
-                }
-
-                if (direction.equals(Direction.create(Direction.NORTH))) {
-                    y += displacement;
-                } else if (direction.equals(Direction.create(Direction.SOUTH))) {
-                    y -= displacement;
-                } else if (direction.equals(Direction.create(Direction.WEST))) {
-                    x -= displacement;
-                } else {
-                    x += displacement;
-                }
+                displace(command);
             }
+        }
+    }
+
+    private void displace(Command command) {
+        int displacement = -1;
+
+        if (command.isForward()) {
+            displacement = 1;
+        }
+
+        if (direction.equals(Direction.create(Direction.NORTH))) {
+            y += displacement;
+        } else if (direction.equals(Direction.create(Direction.SOUTH))) {
+            y -= displacement;
+        } else if (direction.equals(Direction.create(Direction.WEST))) {
+            x -= displacement;
+        } else {
+            x += displacement;
         }
     }
 
