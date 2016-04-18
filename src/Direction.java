@@ -1,4 +1,4 @@
-public class Direction {
+abstract class Direction {
 
     private String direction;
 
@@ -10,33 +10,21 @@ public class Direction {
         return this.direction;
     }
 
-    public Direction rotateLeft() {
-        if (direction.equals("N")) {
-            direction = "W";
-        } else if (direction.equals("S")) {
-            direction = "E";
-        } else if (direction.equals("W")) {
-            direction = "S";
+    static Direction create(String newDirection) {
+        if (newDirection.equals("N")) {
+            return new North();
+        } else if (newDirection.equals("S")) {
+            return new South();
+        } else if (newDirection.equals("W")) {
+            return new West();
         } else {
-            direction = "N";
+            return new East();
         }
-
-        return this;
     }
 
-    public Direction rotateRight() {
-        if (direction.equals("N")) {
-            direction = "E";
-        } else if (direction.equals("S")) {
-            direction = "W";
-        } else if (direction.equals("W")) {
-            direction = "N";
-        } else {
-            direction = "S";
-        }
+    public abstract Direction rotateLeft();
 
-        return this;
-    }
+    public abstract Direction rotateRight();
 
 
     @Override

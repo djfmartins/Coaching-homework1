@@ -5,7 +5,7 @@ public class Rover {
     private int x;
 
     public Rover(int x, int y, String direction) {
-        this.direction = new Direction(direction);
+        this.direction = Direction.create(direction);
         this.y = y;
         this.x = x;
     }
@@ -42,11 +42,11 @@ public class Rover {
     }
 
     private void rotateLeft() {
-        this.direction = this.direction.rotateLeft();
+        direction = direction.rotateLeft();
     }
 
     private void rotateRight() {
-        this.direction = this.direction.rotateRight();
+        direction = direction.rotateRight();
     }
 
 
