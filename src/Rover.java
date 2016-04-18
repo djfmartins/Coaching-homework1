@@ -28,11 +28,11 @@ public class Rover {
                 }
                 int displacement = displacement1;
 
-                if (direction.getDirection().equals(Direction.NORTH)) {
+                if (direction.equals(Direction.create(Direction.NORTH))) {
                     y += displacement;
-                } else if (direction.getDirection().equals(Direction.SOUTH)) {
+                } else if (direction.equals(Direction.create(Direction.SOUTH))) {
                     y -= displacement;
-                } else if (direction.getDirection().equals(Direction.WEST)) {
+                } else if (direction.equals(Direction.create(Direction.WEST))) {
                     x -= displacement;
                 } else {
                     x += displacement;
@@ -48,8 +48,6 @@ public class Rover {
     private void rotateRight() {
         direction = direction.rotateRight();
     }
-
-
 
     @Override
     public boolean equals(Object obj) {

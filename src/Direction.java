@@ -11,10 +11,6 @@ abstract class Direction {
         this.direction = direction;
     }
 
-    public String getDirection() {
-        return this.direction;
-    }
-
     static Direction create(String newDirection) {
         if (newDirection.equals(NORTH)) {
             return new North();
@@ -41,14 +37,6 @@ abstract class Direction {
             return false;
 
         if (getClass() != obj.getClass())
-            return false;
-
-        Direction other = (Direction) obj;
-
-        if (direction == null) {
-            if (other.direction != null)
-                return false;
-        } else if (!direction.equals(other.direction))
             return false;
 
         return true;
