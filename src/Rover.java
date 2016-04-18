@@ -20,13 +20,11 @@ public class Rover {
                 rotateRight();
             } else {
 
-                // Displace Rover
-                int displacement1 = -1;
+                int displacement = -1;
 
                 if (command.isForward()) {
-                    displacement1 = 1;
+                    displacement = 1;
                 }
-                int displacement = displacement1;
 
                 if (direction.equals(Direction.create(Direction.NORTH))) {
                     y += displacement;
