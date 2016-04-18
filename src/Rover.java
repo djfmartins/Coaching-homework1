@@ -12,18 +12,18 @@ public class Rover {
 
     public void receive(String commandsSequence) {
         for (int i = 0; i < commandsSequence.length(); ++i) {
-            String command = commandsSequence.substring(i, i + 1);
+            Command command = new Command(commandsSequence.substring(i, i + 1));
 
-            if (command.equals("l")) {
+            if (command.isLeft()) {
                 rotateLeft();
-            } else if (command.equals("r")) {
+            } else if (command.isRight()) {
                 rotateRight();
             } else {
 
                 // Displace Rover
                 int displacement1 = -1;
 
-                if (command.equals("f")) {
+                if (command.isForward()) {
                     displacement1 = 1;
                 }
                 int displacement = displacement1;
