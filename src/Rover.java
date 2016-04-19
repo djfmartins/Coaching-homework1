@@ -14,8 +14,10 @@ public class Rover {
                 vector.rotateLeft();
             } else if (command.isRight()) {
                 vector.rotateRight();
+            } else if (command.isForward()) {
+                vector.displaceForward();
             } else {
-                vector.displace(command);
+                vector.displaceBackwards();
             }
         }
     }

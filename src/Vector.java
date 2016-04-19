@@ -8,12 +8,22 @@ public class Vector {
         this.point = new Point(x, y);
     }
 
-    public void displace(Command command) {
-        int displacement = -1;
+    public void displaceForward() {
+        int displacement = 1;
 
-        if (command.isForward()) {
-            displacement = 1;
+        if (direction.equals(Direction.create(Direction.NORTH))) {
+            point.adjustY(displacement);
+        } else if (direction.equals(Direction.create(Direction.SOUTH))) {
+            point.adjustY(-displacement);
+        } else if (direction.equals(Direction.create(Direction.WEST))) {
+            point.adjustX(-displacement);
+        } else {
+            point.adjustX(displacement);
         }
+    }
+
+    public void displaceBackwards() {
+        int displacement = -1;
 
         if (direction.equals(Direction.create(Direction.NORTH))) {
             point.adjustY(displacement);
