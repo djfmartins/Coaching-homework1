@@ -11,20 +11,16 @@ public class Vector {
     public void displaceForward() {
         int displacement = 1;
 
-        if (direction.equals(Direction.create(Direction.NORTH))) {
-            point.adjustY(displacement);
-        } else if (direction.equals(Direction.create(Direction.SOUTH))) {
-            point.adjustY(-displacement);
-        } else if (direction.equals(Direction.create(Direction.WEST))) {
-            point.adjustX(-displacement);
-        } else {
-            point.adjustX(displacement);
-        }
+        move(displacement);
     }
 
     public void displaceBackwards() {
         int displacement = -1;
 
+        move(displacement);
+    }
+
+    private void move(int displacement) {
         if (direction.equals(Direction.create(Direction.NORTH))) {
             point.adjustY(displacement);
         } else if (direction.equals(Direction.create(Direction.SOUTH))) {
