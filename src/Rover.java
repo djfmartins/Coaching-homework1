@@ -8,7 +8,9 @@ public class Rover {
 
     public void receive(String commandsSequence) {
         for (int i = 0; i < commandsSequence.length(); ++i) {
-            Command command = new Command(commandsSequence.substring(i, i + 1));
+            String newCommand = commandsSequence.substring(i, i + 1);
+
+            Command command = Command.create(newCommand);
 
             if (command.isLeft()) {
                 vector.rotateLeft();

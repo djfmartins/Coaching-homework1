@@ -11,6 +11,18 @@ public class Command {
         this.command = command;
     }
 
+    static Command create(String newCommand) {
+        if (newCommand.equals(LEFT)) {
+            return new LeftCommand();
+        } else if (newCommand.equals(RIGHT)) {
+            return new RightCommand();
+        } else if (newCommand.equals(FORWARD)) {
+            return new ForwardCommand();
+        } else {
+            return new BackwardsCommand();
+        }
+    }
+
     public boolean isLeft() {
         return command.equals(LEFT);
     }
