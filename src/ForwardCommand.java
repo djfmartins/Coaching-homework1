@@ -4,4 +4,9 @@ public class ForwardCommand extends Command {
     {
         super(FORWARD);
     }
+
+    @Override
+    void action(Vector vector) {
+        vector.displaceForward();
+    }
 }

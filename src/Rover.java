@@ -12,15 +12,7 @@ public class Rover {
 
             Command command = Command.create(newCommand);
 
-            if (command.isLeft()) {
-                vector.rotateLeft();
-            } else if (command.isRight()) {
-                vector.rotateRight();
-            } else if (command.isForward()) {
-                vector.displaceForward();
-            } else {
-                vector.displaceBackwards();
-            }
+            command.action(vector);
         }
     }
 

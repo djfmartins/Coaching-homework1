@@ -4,4 +4,9 @@ public class BackwardsCommand extends Command {
     {
         super(BACKWARD);
     }
+
+    @Override
+    void action(Vector vector) {
+        vector.displaceBackwards();
+    }
 }

@@ -4,4 +4,9 @@ public class RightCommand extends Command {
     {
         super(RIGHT);
     }
+
+    @Override
+    void action(Vector vector) {
+        vector.rotateRight();
+    }
 }

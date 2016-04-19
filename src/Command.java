@@ -1,4 +1,4 @@
-public class Command {
+abstract class Command {
 
     public static final String LEFT     = "l";
     public static final String RIGHT    = "r";
@@ -23,19 +23,5 @@ public class Command {
         }
     }
 
-    public boolean isLeft() {
-        return command.equals(LEFT);
-    }
-
-    public boolean isRight() {
-        return command.equals(RIGHT);
-    }
-
-    public boolean isForward() {
-        return command.equals(FORWARD);
-    }
-
-    public boolean isBackward() {
-        return command.equals(BACKWARD);
-    }
+    abstract void action(Vector vector);
 }
